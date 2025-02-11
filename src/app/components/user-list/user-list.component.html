@@ -1,0 +1,48 @@
+<div class="container">
+  <button class="btn btn-success mt-5" [routerLink]="['add-user']">+ Add User</button>
+  <table class="mt-5 table table-striped table-bordered text-center  ">
+    <thead class="table-primary ">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>BirthDate</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Job</th>
+        <th>More Details</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.birthDate}}</td>
+        <!-- <td>{{calculateBithDate(user.age)}}</td> -->
+        <td>{{user.age}}</td>
+        <td [ngStyle]="{'color':user.gender === 'Male'? '#006DFA' : '#FA85AE'}">{{user.gender}}</td>
+        <td>{{user.job}}</td>
+        <td><a [routerLink]="['Details',user.id]">Details</a></td>
+        <td class="px-3 py-3 d-flex justify-content-center gap-3">
+          <!-- <i class="fa-solid fa-heart" [ngClass]="{'text-danger':user.isFavorite}"></i> -->
+          <i class="fa-solid fa-heart" [ngClass]="user.isFavorite ? 'fa-heart text-danger' :'fa-heart-o'" (click)="toggleFavorite(user)"></i>
+          <i class="fa-solid fa-pen hover-green" [routerLink]="['edit-user',user.id]"></i>
+          <i class="fa-solid fa-trash hover-red" (click)="deleteUser(user.id)"></i>
+        </td>
+
+
+    </tbody>
+  </table>
+  <div *ngIf="showToast" class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast show bg-success text-white">
+      <div class="toast-header">
+        <strong class="me-auto"></strong>
+        <button type="button" class="btn-close" (click)="showToast = false"></button>
+      </div>
+      <div class="toast-body">
+        User deleted successfully
+      </div>
+    </div>
+  </div>
+
+</div>

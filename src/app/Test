@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <h2>Add New User</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" id="name" class="form-control" [(ngModel)]="newUser.name" name="name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="age" class="form-label">Age:</label>
+      <input type="number" id="age" class="form-control" [(ngModel)]="newUser.age" name="age" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender:</label>
+      <select id="gender" class="form-control" [(ngModel)]="newUser.gender" name="gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="job" class="form-label">Job:</label>
+      <input type="text" id="job" class="form-control" [(ngModel)]="newUser.job" name="job" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="favorite" class="form-label">Favorite:</label>
+      <input type="checkbox" id="favorite" [(ngModel)]="newUser.isFavorite" name="favorite">
+    </div>
+
+    <button type="submit" class="btn btn-success">Add User</button>
+  </form>
+</div>
+
+
+

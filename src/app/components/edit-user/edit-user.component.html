@@ -1,0 +1,135 @@
+<div class="container w-50 mt-5">
+  <button class="btn btn-secondary mb-5 " (click)="goBack()">Back to User List</button>
+
+  <h2 class="fw-bold mb-5">Edit User</h2>
+  <!-- <form (ngSubmit)="onSubmit()"> -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="userData">
+    <div class="mb-3">
+      <label class="form-label" for="nameId"
+        >Name <span class="text-danger">*</span></label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="nameId"
+        formControlName="name"
+      />
+      <div class="validators">
+        @if (userData.get('name')?.touched || userData.get('name')?.dirty){ @if
+        (userData.get('name')?.getError('required')) {
+        <p class="text-danger">Name is Required</p>
+        } } @if (userData.get('name')?.errors?.['minlength']) {
+        <p class="text-danger">Minimum Lenght is 3 Charachters</p>
+        }
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="birthdateId">BirthDate</label>
+      <input
+        type="date"
+        class="form-control"
+        id="birthdateId"
+        formControlName="birthDate"
+      />
+      <!-- <p>{{ userData.get('birthDate')?.value | date: 'dd/MM/yy' }}</p> -->
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="ageId">Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="ageId"
+        formControlName="age"
+        min="0"
+      />
+      <div class="validatorsAge">
+        @if (userData.get('age')?.errors?.['min']) {
+        <p class="text-danger">Minimum Age is 18</p>
+        } @if (userData.get('age')?.errors?.['max']) {
+        <p class="text-danger">Maximum Age is 50</p>
+        }
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="addressId">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="addressId"
+        formControlName="address"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="phoneId">Phone Number <span class="text-danger">*</span></label>
+      <input
+        type="number"
+        class="form-control"
+        id="phoneId"
+        formControlName="phoneNumber"
+      />
+      <div class="validatorPhone">
+        @if (userData.get('phoneNumber')?.errors?.['pattern']) {
+
+        <p class="text-danger">Invalid Phone Number</p>
+        } @if (userData.get('phoneNumber')?.touched) { @if
+        (userData.get('phoneNumber')?.getError('required')){
+        <p class="text-danger">Phone Number is Required</p>
+        }}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Gender</label>
+      <select
+        type="text"
+        class="form-control"
+        for="genderId"
+        id="genderId"
+        formControlName="gender"
+      >
+        <option value="">--Select Gender--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Job</label>
+      <input
+        type="text"
+        class="form-control"
+        for="jobId"
+        id="jobId"
+        formControlName="job"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-success mb-5"
+      [disabled]="!isSubmitEnabled()"
+    >
+      Save
+    </button>
+    <div
+      *ngIf="showToast"
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+    >
+      <div class="toast show bg-success text-white">
+        <div class="toast-header">
+          <strong class="me-auto">Success</strong>
+          <button
+            type="button"
+            class="btn-close"
+            (click)="showToast = false"
+          ></button>
+        </div>
+        <div class="toast-body">User added successfully!</div>
+      </div>
+    </div>
+  </form>
+</div>

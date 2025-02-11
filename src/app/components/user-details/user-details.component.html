@@ -1,0 +1,71 @@
+<div class="container w-50">
+  <button class="btn btn-secondary mt-5 " (click)="goBack()">Back to User List</button>
+<div class="card mb-3 m-5" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="user.image || 'assets/user.jpg'" class="img-fluid rounded-start" alt="User Image">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">{{user.name}}</p>
+        <h5 class="card-title">BirthDate</h5>
+        <p class="card-text">{{user.birthDate}}</p>
+        <h5 class="card-title">Age</h5>
+        <p class="card-text">{{user.age}}</p>
+        <h5 class="card-title">Gender</h5>
+        <p class="card-text">{{user.gender}}</p>
+        <h5 class="card-title">Job</h5>
+        <p class="card-text">{{user.job}}</p>
+        <h5 class="card-title">Address</h5>
+        <p class="card-text">{{user.address}}</p>
+        <h5 class="card-title">Phone Number</h5>
+        <p class="card-text">{{user.phoneNumber}}</p>
+
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<!-- <div class="container">
+  <button class="btn btn-secondary mt-5" (click)="goBack()">Back</button>
+  <h2 class="mt-5">User Details</h2>
+  <table class="mt-3 table table-striped table-bordered text-center  ">
+    <thead class="table-primary ">
+      <tr>
+        <th>Name</th>
+        <th>BirthDate</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Job</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="user">
+
+        <td>{{user.name}}</td>
+        <td>{{user.birthDate}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.job}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.phoneNumber}}</td>
+        <td class="px-3 py-3 d-flex justify-content-center gap-3">
+          <i class="fa-solid fa-heart" [ngClass]="{'text-danger':user.isFavorite}"></i>
+          <i class="fa-solid fa-pen hover-green" [routerLink]="['edit-user']"></i>
+          <i class="fa-solid fa-trash hover-red"></i>
+        </td>
+
+
+    </tbody>
+  </table>
+</div> -->
