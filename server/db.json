@@ -1,17 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Ahmed",
-      "birthDate": "1995-2-20",
-      "age": 30,
-      "address": "Cairo, Egypt",
-      "phoneNumber": "01234567891",
-      "gender": "Male",
-      "job": "Developer",
-      "isFavorite": true
-    },
-    {
       "name": "Noha",
       "birthDate": "2000-01-01",
       "age": 25,
@@ -20,7 +9,7 @@
       "address": "Cairo, Egypt",
       "phoneNumber": "01234567891",
       "id": "2",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": "3",
@@ -31,7 +20,7 @@
       "phoneNumber": "01234567891",
       "gender": "Male",
       "job": "Developer",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "id": "4",
@@ -45,17 +34,6 @@
       "isFavorite": false
     },
     {
-      "id": "3fa9",
-      "name": "Mona",
-      "birthDate": "1990-02-03",
-      "age": 25,
-      "gender": "Female",
-      "job": "sss",
-      "address": "Cairo",
-      "phoneNumber": 1236547896,
-      "isFavorite": true
-    },
-    {
       "name": "Eman ",
       "birthDate": "2025-02-08",
       "age": 25,
@@ -64,6 +42,17 @@
       "address": "Cairo",
       "phoneNumber": "01060811600",
       "id": "8ea0"
+    },
+    {
+      "name": "Raghad",
+      "birthDate": "1995-07-23",
+      "age": 29,
+      "gender": "Female",
+      "job": "dddddmmmm",
+      "address": "",
+      "phoneNumber": "01060811600",
+      "id": "51c4",
+      "isFavorite": true
     }
   ],
   "idGenerator": 5
